@@ -24,7 +24,7 @@ I created this repository in order to share them. I hope it may be useful for yo
 >    l. control = name of your control group<br>
 >    m. measure = measurement unity (if it's continuous)<br>
 
->## Second Step: Load your packages
+## Second Step: Load your packages
   ```r
 package_list <- c("readxl", "meta", "tcltk", "dmetar", "metabias", "metafor", "dplyr", "xlsx")
 for (package in package_list) {
