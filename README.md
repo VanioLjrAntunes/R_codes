@@ -2,7 +2,9 @@
 <br>
 Hi, I'm Vanio Antunes, a 4th medical student and former tutor at meta-analysis academy.<br>
 My hobby is to create codes to make our work of producing meta-analysis easier.<br>
-I created this repository in order to share them. I hope it may be useful for you.
+I created this repository in order to share them. I hope it may be useful for you. <br>
+If you wish to follow my work here you have a  [link with my social medias]((https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2Fvanio.antunes&e=AT0ZSXkXk3YTMmRxD2gIDd5L2Iqzhm4f_ghS8m0-L3Sf0IiD2zVsI-yi7JoqaKxxpfg6Bq1dqVvmrMswRk2FTZs78uJOymPfxH48xbev3vIOxRQLsoLR2Ds))
+
 
 # Code 1 - Extracting text made data directly from R <br>
 > This code aims to make it easier the process of writing. Normally we need to go to our forest plots and extract our data from there. With this code you will have a basic pre-made text with your results.
@@ -44,6 +46,7 @@ for (package in package_list) {
     message(paste("Package", package, "is already installed and loaded."))
   }
 }
+```
 
 ```
 ## Third Step: Load your data and select your working directory
@@ -58,3 +61,9 @@ myfile <- tk_choose.files()
   
   names(ma) <- sheet_names
 ```
+> ### It will apear a new window behind R Studio. Browse through your computer and find the your folder
+![image](https://github.com/VanioLjrAntunes/R_codes/assets/155832432/8592c4ec-aa6c-44c2-8863-0d0ca795255f)
+<br>
+> ### It will apear another window. Selec the file with your data
+![image](https://github.com/VanioLjrAntunes/R_codes/assets/155832432/b3f1d7c7-ba56-41d7-8ce4-76581a3738b6)
+<br>
