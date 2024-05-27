@@ -1,2 +1,60 @@
-theme: jekyll-theme-minimal
-Hi, i'm Vanio Antunes, a medical student from Brazil and aspiring researcher. I developed this repository to share usefull codes that may help you. Feel free to use it as you see fit.
+# Who am I? <br>
+<br>
+Hi, I'm Vanio Antunes, a 4th medical student and former tutor at meta-analysis academy.<br>
+My hobby is to create codes to make our work of producing meta-analysis easier.<br>
+I created this repository in order to share them. I hope it may be useful for you.
+
+# Code 1 - Extracting text made data directly from R <br>
+> This code aims to make it easier the process of writing. Normally we need to go to our forest plots and extract our data from there. With this code you will have a basic pre-made text with your results.
+## First Step: Prepare your data
+>### 1. Create your xlsx file with your data like in the image below
+>    ![image](https://github.com/VanioAntunesMD/R_codes/assets/155832432/49d6ac3a-9a0f-414a-a936-36191235d626)
+>    Where:
+>    a. Author = Last name of the first author of study <br>
+>    b. Year = Year that the study was published<br>
+>    c. mean.e = mean value of your intervention<br>
+>    d. sd.e = standard deviation value of your intervention<br>
+>    e. n.e = sample size of your intervention<br>
+>    f. mean.e = mean value of your control<br>
+>    g. sd.e = standard deviation value of your control<br>
+>    h. n.e = sample size of your control<br>
+>    i. outcome = name of your outcome<br>
+>    j conotation = the meaning of the outcome. If it's good then "positive" and if bad then "negative"<br>
+>    k. intervention = name of your intervention group<br>
+>    l. control = name of your control group<br>
+>    m. measure = measurement unity (if it's continuous)<br>
+
+>## Second Step: Load your packages
+  ```r
+package_list <- c("readxl", "meta", "tcltk", "dmetar", "metabias", "metafor", "dplyr", "xlsx")
+for (package in package_list) {
+  if (!require(package, character.only = TRUE)) {
+    # If not installed, install the package
+    install.packages(package, dependencies = TRUE)
+    
+    # Check the installation path
+    if (length(grep(package, .libPaths(), fixed = TRUE)) == 0) {
+      warning(paste("Error: Package", package, "not installed properly."))
+    } else {
+      # Try loading the installed package
+      library(package, character.only = TRUE)
+      message(paste("Package", package, "installed and loaded successfully."))
+    }
+  } else {
+    message(paste("Package", package, "is already installed and loaded."))
+  }
+}
+
+```
+## Third Step: Load your data and select your working directory
+```r
+mwd <- tk_choose.dir()
+myfile <- tk_choose.files()
+
+  sheet_names <- excel_sheets(myfile)
+  
+  ma <- lapply(sheet_names, function(x) {                    # Read all sheets as lists
+    as.data.frame(read_excel(myfile, sheet = x)) } )    # Convert your uploded dataset into a data 
+  
+  names(ma) <- sheet_names
+```
