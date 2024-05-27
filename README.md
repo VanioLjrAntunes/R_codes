@@ -3,7 +3,10 @@
 Hi, I'm Vanio Antunes, a 4th medical student and former tutor at meta-analysis academy.<br>
 My hobby is to create codes to make our work of producing meta-analysis easier.<br>
 I created this repository in order to share them. I hope it may be useful for you. <br>
-If you wish to follow my work here you have a  [link with my social medias]((https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2Fvanio.antunes&e=AT0ZSXkXk3YTMmRxD2gIDd5L2Iqzhm4f_ghS8m0-L3Sf0IiD2zVsI-yi7JoqaKxxpfg6Bq1dqVvmrMswRk2FTZs78uJOymPfxH48xbev3vIOxRQLsoLR2Ds))
+If you wish to follow my work here you have a <a href="https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2Fvanio.antunes&e=AT0ZSXkXk3YTMmRxD2gIDd5L2Iqzhm4f_ghS8m0-L3Sf0IiD2zVsI-yi7JoqaKxxpfg6Bq1dqVvmrMswRk2FTZs78uJOymPfxH48xbev3vIOxRQLsoLR2Ds">link tree with my social medias.</a>
+
+
+
 
 
 # Code 1 - Extracting text made data directly from R <br>
