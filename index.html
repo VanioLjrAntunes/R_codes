@@ -6,55 +6,34 @@
     <meta http-equiv='pragma' content='no-cache'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>README</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header, footer {
-            background-color: #333;
-            color: #fff;
-            padding: 1em 0;
-            text-align: center;
-        }
-        main {
-            flex: 1;
-            padding: 1em;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-    </style>
+   <title>Repository README</title>
 </head>
 <body>
-    <header>
-        <h1>README</h1>
-    </header>
-    <main class="container">
-        <section id="readme-content">
-            <h2>My Project</h2>
-            <p>This project is about ...</p>
-            <h3>Installation</h3>
-            <p>To install the project, do the following:</p>
-            <pre><code>
-# Installation instructions
-# Example:
-git clone https://github.com/username/repo.git
-cd repo
-npm install
-            </code></pre>
-            <!-- Add more content from your README as needed -->
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 My Name. All rights reserved.</p>
-    </footer>
+    <div id="content">Loading...</div>
+
+    <!-- Include Marked.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fetch the README.md file from the repository
+            fetch('README.md')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    // Parse the Markdown content to HTML
+                    const content = marked(text);
+                    // Inject the HTML into the page
+                    document.getElementById('content').innerHTML = content;
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                    document.getElementById('content').innerHTML = 'Failed to load README.md';
+                });
+        });
+    </script>
 </body>
 </html>
