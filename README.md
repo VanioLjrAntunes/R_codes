@@ -1,4 +1,6 @@
 # Who am I? <br>
+![image](https://github.com/VanioLjrAntunes/R_codes/assets/155832432/13948857-e42c-4422-98a1-5d0db968801c)
+
 <br>
 Hi, I'm Vanio Antunes, a 4th medical student and former tutor at meta-analysis academy.<br>
 My hobby is to create codes to make our work of producing meta-analysis easier.<br>
