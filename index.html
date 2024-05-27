@@ -15,8 +15,8 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Fetch the README.md file from the repository
-            fetch('https://github.com/VanioLjrAntunes/R_codes/blob/main/README.md')  // Change this path if README.md is in a subdirectory
+            // Fetch the README.md file from the GitHub repository
+            fetch('https://raw.githubusercontent.com/VanioLjrAntunes/R_codes/main/README.md')  
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok ' + response.statusText);
