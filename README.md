@@ -8,7 +8,50 @@ I created this repository in order to share them. I hope it may be useful for yo
 If you wish to follow my work here you have a <a href="https://l.instagram.com/?u=https%3A%2F%2Flinktr.ee%2Fvanio.antunes&e=AT0ZSXkXk3YTMmRxD2gIDd5L2Iqzhm4f_ghS8m0-L3Sf0IiD2zVsI-yi7JoqaKxxpfg6Bq1dqVvmrMswRk2FTZs78uJOymPfxH48xbev3vIOxRQLsoLR2Ds">link tree with my social medias.</a>
 
 
+```{r}
 
+custom_metaprop <- function(x) {
+  meta::metaprop(x,
+         event=event,
+         n=n,
+         method = "Inverse",
+         method.tau = "DL",
+         sm = "PAS",
+         studlab = studlab,
+         subgroup = subgroup)
+}
+
+custom_forest <- function(x) {
+  meta::forest(x,
+       leftcols = c("studlab", "event", "n", "w.random", "effect", "ci"),
+       leftlabs = c("Author", "Event", "Total", "Weight", "Proportion", "95% CI"),
+               sortvar = studlab,
+       ff.xlab = "bold", fs.xlab = 12,
+       pscale = 100,
+       pooled.events = T,
+       xlab = unique(data$smlab)[1],
+       xlim = c(0,100),
+       rightcols = FALSE,
+       pooled.totals = TRUE,  # Ensure this is set to TRUE
+       digits.pval.Q = 3, digits = 2,
+       just = "center",
+       random = TRUE, common = FALSE,
+       fs.heading = 12, fs.study = 12, fs.hetstat = 10,
+       colgap = "5mm", colgap.forest = "5mm",
+       col.square = "darkblue", col.square.lines = "black", 
+       col.diamond = "maroon", col.diamond.lines = "black",
+       print.Q = TRUE, print.pval.Q = TRUE, print.tau.ci = TRUE,
+       overall.hetstat=T,
+       subgroup = T,
+       col.subgroup = "black",
+       print.subgroup.name = F,
+       test.effect.subgroup = F,
+       overall = T,
+       test.subgroup = T)
+}
+
+
+```
 
 
 # Code 1 - Extracting text made data directly from R <br>
